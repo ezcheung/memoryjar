@@ -7,6 +7,8 @@ import {
   TextInput,
 } from 'react-native';
 
+import InputPage from './inputPage';
+
 export default class App extends React.Component {
 
   constructor() {
@@ -18,7 +20,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View>
-        <Text>Hello</Text>
+        <InputPage/>
       </View>
     )
   }

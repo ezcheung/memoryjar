@@ -24,7 +24,9 @@ export default class App extends React.Component {
   }
 
   page() {
-    return this.state.viewing ? <MemoryList/> : <InputPage/>
+    return this.state.viewing ? 
+    <MemoryList toggleView={this.toggleView.bind(this)}/> : 
+    <InputPage toggleView={this.toggleView.bind(this)}/>
   }
 
   render() {

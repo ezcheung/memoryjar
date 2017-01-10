@@ -5,6 +5,7 @@ import {
   Text,
   TouchableHighlight,
   TextInput,
+  AsyncStorage
 } from 'react-native';
 
 import {Styles} from './../styles/styles';
@@ -23,7 +24,7 @@ export default class InputPage extends React.Component {
       <View style={Styles.container}>
         <TextInput value={this.state.newMemory} onChangeText={this.handleInput.bind(this)}/>
         <TouchableHighlight onPress={this.submitMemory.bind(this)}>
-          <Text>Store</Text>
+          <Text>Store Memory</Text>
         </TouchableHighlight>
       </View>
     )
@@ -34,6 +35,14 @@ export default class InputPage extends React.Component {
   }
 
   submitMemory() {
-    this.setState({newMemory : ""});
+    AsyncStorage.getItem('memories')
+    .then(memories => {
+      let memArray = memories ? JSON.parse(memories) : [];
+      memArray.push(this.state.newMemory);
+      return AsyncStorage.setItem('memories', JSON.stringify(memArray))
+      .then((resp) => {this.setState({newMemory : ""})}) //clear if set goes through
+      .catch(err => {console.error(err)});
+    })
+    .catch(err => {console.error(err)});
   }
 }

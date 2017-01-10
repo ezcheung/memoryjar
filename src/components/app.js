@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 import InputPage from './inputPage';
+import memoryList from './memoryList';
 
 export default class App extends React.Component {
 
@@ -17,10 +18,19 @@ export default class App extends React.Component {
       viewing : false
     }
   }
+
+  toggleView() {
+    this.state.viewing = !this.state.viewing;
+  }
+
+  page() {
+    return this.state.viewing ? <MemoryList/> : <InputPage/>
+  }
+
   render() {
     return (
       <View>
-        <InputPage/>
+        {this.page()}
       </View>
     )
   }

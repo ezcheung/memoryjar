@@ -7,6 +7,8 @@ import {
   TextInput,
 } from 'react-native';
 
+import {Styles} from './../styles/styles';
+
 export default class InputPage extends React.Component {
 
   constructor() {
@@ -18,7 +20,7 @@ export default class InputPage extends React.Component {
 
   render() {
     return ( 
-      <View style="form">
+      <View style={Styles.container}>
         <TextInput value={this.state.newMemory} onChangeText={this.handleInput.bind(this)}/>
         <TouchableHighlight onPress={this.submitMemory.bind(this)}>
           <Text>Store</Text>

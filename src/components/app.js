@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import InputPage from './inputPage';
-import memoryList from './memoryList';
+import MemoryList from './memoryList';
 
 export default class App extends React.Component {
 

@@ -22,7 +22,8 @@ export default class MemoryList extends React.Component() {
   componentWillMount() {
     AsyncStorage.getItem('memories')
     .then(memories => {
-      this.setState({fetching : false, memories: memories});
+      if(!memories) memories = [];
+      this.setState({fetching : false, memories: JSON.parse(memories)});
     })
     .catch(err => {
       console.error(err);
@@ -30,7 +31,18 @@ export default class MemoryList extends React.Component() {
     })
   }
 
-  render() {
+  list() {
+    return (
+      this.state.memories.map((mem, i) => <Memory key={i} mem={mem}/>)
+      )
+  }
 
+  render() {
+    if (this.state.fetching) return;
+    return (
+      <View>
+        {this.list()}
+      </View>
+      )
   }
 }

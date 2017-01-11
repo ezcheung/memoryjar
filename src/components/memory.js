@@ -5,7 +5,7 @@ import {
   Text,
 } from 'react-native';
 
-import {Styles} from './../styles/styles.js';
+import Styles from './../styles/styles.js';
 
 export default class Memory extends React.Component {
 

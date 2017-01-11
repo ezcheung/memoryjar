@@ -9,6 +9,7 @@ import {
 
 import InputPage from './inputPage';
 import MemoryList from './memoryList';
+import Styles from './../styles/styles.js';
 
 export default class App extends React.Component {
 
@@ -31,7 +32,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={Styles.app}>
         {this.page()}
       </View>
     )

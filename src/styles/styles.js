@@ -9,6 +9,13 @@ const Styles = StyleSheet.create({
     borderBottomWidth : 1,
     padding : 10
   },
+  nav : {
+    padding : 10
+  },
+  app : {
+    backgroundColor : 'rgba(0, 0, 0, 0.04)',
+    flex : 1,
+  }
 });
 
-export {Styles};
+export default Styles;

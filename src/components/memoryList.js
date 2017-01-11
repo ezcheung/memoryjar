@@ -9,6 +9,7 @@ import {
 
 import Memory from './memory';
 import Spinner from 'react-native-loading-spinner-overlay';
+import Styles from './../styles/styles.js';
 
 export default class MemoryList extends React.Component {
 
@@ -50,7 +51,7 @@ export default class MemoryList extends React.Component {
       <View>
         {this.list()}
         <TouchableOpacity onPress={this.props.toggleView}>
-          <Text>Back</Text>
+          <Text style={Styles.nav}>Back</Text>
         </TouchableOpacity>
       </View>
       )

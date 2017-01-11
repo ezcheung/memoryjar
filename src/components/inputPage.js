@@ -8,7 +8,7 @@ import {
   AsyncStorage
 } from 'react-native';
 
-import {Styles} from './../styles/styles';
+import Styles from './../styles/styles';
 
 export default class InputPage extends React.Component {
 
@@ -21,12 +21,12 @@ export default class InputPage extends React.Component {
 
   render() {
     return ( 
-      <View style={Styles.container}>
+      <View>
         <TextInput value={this.state.newMemory} onChangeText={this.handleInput.bind(this)}/>
-        <TouchableOpacity onPress={this.submitMemory.bind(this)}>
+        <TouchableOpacity style={Styles.nav} onPress={this.submitMemory.bind(this)}>
           <Text>Store Memory</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.props.toggleView}>
+        <TouchableOpacity style={Styles.nav} onPress={this.props.toggleView}>
           <Text>See Memories</Text>
         </TouchableOpacity>
       </View>

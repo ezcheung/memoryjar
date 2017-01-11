@@ -26,6 +26,9 @@ export default class InputPage extends React.Component {
         <TouchableHighlight onPress={this.submitMemory.bind(this)}>
           <Text>Store Memory</Text>
         </TouchableHighlight>
+        <TouchableHighlight onPress={this.props.toggleView}>
+          <Text>See Memories</Text>
+        </TouchableHighlight>
       </View>
     )
   }

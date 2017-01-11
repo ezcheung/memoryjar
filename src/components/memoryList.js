@@ -10,7 +10,7 @@ import {
 import Memory from './memory';
 import Spinner from 'react-native-loading-spinner-overlay';
 
-export default class MemoryList extends React.Component() {
+export default class MemoryList extends React.Component {
 
   constructor() {
     super();
@@ -42,13 +42,16 @@ export default class MemoryList extends React.Component() {
     if (this.state.fetching) {
       return (
         <View>
-          <Spinner visible="true" textContext={{"Thinking back..."}}/>
+          <Spinner visible={true} textContext={"Thinking back..."}/>
         </View>
       );
     }
     return (
       <View>
         {this.list()}
+        <TouchableOpacity onPress={this.props.toggleView}>
+          <Text>Back</Text>
+        </TouchableOpacity>
       </View>
       )
   }

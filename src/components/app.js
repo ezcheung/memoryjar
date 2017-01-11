@@ -20,7 +20,7 @@ export default class App extends React.Component {
   }
 
   toggleView() {
-    this.state.viewing = !this.state.viewing;
+    this.setState({viewing: !this.state.viewing});
   }
 
   page() {

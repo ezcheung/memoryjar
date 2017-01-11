@@ -5,7 +5,7 @@ import {
   Text,
 } from 'react-native';
 
-export default class Memory extends React.Component() {
+export default class Memory extends React.Component {
 
   constructor() {
     super();

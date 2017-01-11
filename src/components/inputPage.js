@@ -21,8 +21,8 @@ export default class InputPage extends React.Component {
 
   render() {
     return ( 
-      <View>
-        <TextInput value={this.state.newMemory} onChangeText={this.handleInput.bind(this)}/>
+      <View style={Styles.inputPage}>
+        <TextInput style={Styles.inputBox} value={this.state.newMemory} onChangeText={this.handleInput.bind(this)}/>
         <TouchableOpacity style={Styles.nav} onPress={this.submitMemory.bind(this)}>
           <Text>Store Memory</Text>
         </TouchableOpacity>

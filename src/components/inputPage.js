@@ -3,7 +3,7 @@ import React from 'react';
 import {
   View,
   Text,
-  TouchableHighlight,
+  TouchableOpacity,
   TextInput,
   AsyncStorage
 } from 'react-native';
@@ -23,12 +23,12 @@ export default class InputPage extends React.Component {
     return ( 
       <View style={Styles.container}>
         <TextInput value={this.state.newMemory} onChangeText={this.handleInput.bind(this)}/>
-        <TouchableHighlight onPress={this.submitMemory.bind(this)}>
+        <TouchableOpacity onPress={this.submitMemory.bind(this)}>
           <Text>Store Memory</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={this.props.toggleView}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.props.toggleView}>
           <Text>See Memories</Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
       </View>
     )
   }

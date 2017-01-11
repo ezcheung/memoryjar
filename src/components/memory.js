@@ -5,6 +5,8 @@ import {
   Text,
 } from 'react-native';
 
+import {Styles} from './../styles/styles.js';
+
 export default class Memory extends React.Component {
 
   constructor() {
@@ -13,7 +15,7 @@ export default class Memory extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={Styles.memory}>
         <Text>{this.props.mem}</Text>
       </View>
     )

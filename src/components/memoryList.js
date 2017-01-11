@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 import Memory from './memory';
+import Spinner from 'react-native-loading-spinner-overlay';
 
 export default class MemoryList extends React.Component() {
 
@@ -38,7 +39,13 @@ export default class MemoryList extends React.Component() {
   }
 
   render() {
-    if (this.state.fetching) return;
+    if (this.state.fetching) {
+      return (
+        <View>
+          <Spinner visible="true" textContext={{"Thinking back..."}}/>
+        </View>
+      );
+    }
     return (
       <View>
         {this.list()}
